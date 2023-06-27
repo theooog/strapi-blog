@@ -38,7 +38,7 @@ const NavigationBar = () => {
 
       {/*MOBILE MENU*/}
       {menuOpen && (
-        <div className="absolute left-0 top-0 bg-white w-full h-full p-10">
+        <div className="absolute left-0 top-0 bg-white w-full h-full p-10 z-50">
           <div className="flex flex-row">
             <Link href={"/"} className="flex-none">
               <Image
