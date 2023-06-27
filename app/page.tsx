@@ -1,6 +1,5 @@
-import Image from "next/image";
 import FeaturedCard from "./components/Cards/FeaturedCard";
-import BlogCard from "./components/Cards/BlogCard";
+import BlogList from "./components/Lists/BlogList";
 export default function Home() {
   return (
     <main>
@@ -13,6 +12,7 @@ export default function Home() {
         imageALT={"Robot art image"}
         url={"/"}
       />
+      <BlogList title={"Recent articles"} />
     </main>
   );
 }
