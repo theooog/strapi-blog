@@ -18,6 +18,7 @@ const NavigationBar = () => {
             src={"https://i.imgur.com/msqTdnJ.png"}
             width={150}
             height={100}
+            alt={"Strapi Blog Logo"}
           />
         </Link>
         <Hamburger
@@ -45,6 +46,7 @@ const NavigationBar = () => {
                 src={"https://i.imgur.com/msqTdnJ.png"}
                 width={150}
                 height={100}
+                alt={"Strapi Blog Logo"}
               />
             </Link>
             <span
