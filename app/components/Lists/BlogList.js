@@ -1,46 +1,27 @@
 import React from "react";
 import BlogCard from "../Cards/BlogCard";
-const BlogList = ({ title }) => {
+import { getMedia } from "../../assets/helpers/getMedia";
+const BlogList = ({ blogs, title, count }) => {
   return (
     <div className="mt-20">
       <h4>{title}</h4>
       <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <BlogCard
-          title={"Blog example"}
-          description={
-            "this is a blog example.this is a blog examplethis is a blog examplethis is a blog examplethis is a blog examplethis is a blog example"
+        {blogs.map((blog, index) => {
+          const attr = blog.attributes;
+          const image = getMedia(attr?.featured_image, "small");
+          if (index < count) {
+            return (
+              <BlogCard
+                key={"BlogCard " + blog?.id}
+                title={attr?.title}
+                description={attr?.description}
+                imageURL={image?.url}
+                imageALT={image?.alt}
+                url={"/blog/" + attr?.slug}
+              />
+            );
           }
-          imageURL={"https://i.imgur.com/Vbsk7t5.jpeg"}
-          imageALT={"Robot art image"}
-          url={"/"}
-        />
-        <BlogCard
-          title={"Blog example"}
-          description={
-            "this is a blog example.this is a blog examplethis is a blog examplethis is a blog examplethis is a blog examplethis is a blog example"
-          }
-          imageURL={"https://i.imgur.com/Vbsk7t5.jpeg"}
-          imageALT={"Robot art image"}
-          url={"/"}
-        />
-        <BlogCard
-          title={"Blog example"}
-          description={
-            "this is a blog example.this is a blog examplethis is a blog examplethis is a blog examplethis is a blog examplethis is a blog example"
-          }
-          imageURL={"https://i.imgur.com/Vbsk7t5.jpeg"}
-          imageALT={"Robot art image"}
-          url={"/"}
-        />
-        <BlogCard
-          title={"Blog example"}
-          description={
-            "this is a blog example.this is a blog examplethis is a blog examplethis is a blog examplethis is a blog examplethis is a blog example"
-          }
-          imageURL={"https://i.imgur.com/Vbsk7t5.jpeg"}
-          imageALT={"Robot art image"}
-          url={"/"}
-        />
+        })}
       </div>
     </div>
   );

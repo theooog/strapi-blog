@@ -11,7 +11,7 @@ const NavigationBar = () => {
   ];
   const [menuOpen, setMenuOpen] = useState();
   return (
-    <div className="py-5 border-b-2 border-grey">
+    <div className="py-5 border-b-2 border-grey" id="navbar">
       <div className="container flex flex-row gap-5">
         <Link href={"/"} className="flex-none">
           <Image
