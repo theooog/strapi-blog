@@ -29,7 +29,7 @@ const NavigationBar = () => {
         <div className="ml-6 hidden md:block">
           {menuItems.map((item) => {
             return (
-              <Link href={item?.link}>
+              <Link key={item?.link} href={item?.link}>
                 <span>{item?.title}</span>
               </Link>
             );

@@ -23,6 +23,7 @@ const PageBuilder = ({ components, blogs }) => {
       case "list.bloglist":
         return (
           <BlogList
+            key={component?.title + index}
             title={component?.title}
             count={component?.count}
             blogs={blogs}

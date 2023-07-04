@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  button {
+    @apply bg-black opacity-80 hover:opacity-100 text-white rounded p-2;
+  }
   h1 {
     @apply text-5xl font-extrabold dark:text-white mb-14;
   }

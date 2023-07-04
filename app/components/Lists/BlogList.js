@@ -1,9 +1,9 @@
 import React from "react";
 import BlogCard from "../Cards/BlogCard";
 import { getMedia } from "../../assets/helpers/getMedia";
-const BlogList = ({ blogs, title, count }) => {
+const BlogList = ({ blogs, title, count = 16 }) => {
   return (
-    <div className="mt-20">
+    <div>
       <h4>{title}</h4>
       <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {blogs.map((blog, index) => {
