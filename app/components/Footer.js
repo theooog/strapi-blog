@@ -21,11 +21,11 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <div className="ml-auto">
+        <div className="lg:ml-auto">
           {menuItems.map((item) => {
             return (
               <Link href={item?.link}>
-                <span className="text-white">{item?.title}</span>
+                <span className="text-white px-3">{item?.title}</span>
               </Link>
             );
           })}

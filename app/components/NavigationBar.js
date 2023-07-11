@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import Hamburger from "../assets/Hamburger";
+import Hamburger from "../assets/svg/Hamburger";
 const NavigationBar = () => {
   const menuItems = [
     { title: "Home", link: "/" },
@@ -30,7 +30,7 @@ const NavigationBar = () => {
           {menuItems.map((item) => {
             return (
               <Link key={item?.link} href={item?.link}>
-                <span>{item?.title}</span>
+                <span className="menuItem">{item?.title}</span>
               </Link>
             );
           })}
@@ -51,7 +51,7 @@ const NavigationBar = () => {
             </Link>
             <span
               role="button"
-              className="ml-auto"
+              className="ml-auto menuItem"
               onClick={() => setMenuOpen(false)}
             >
               X
@@ -61,7 +61,7 @@ const NavigationBar = () => {
             {menuItems.map((item) => {
               return (
                 <Link href={item?.link}>
-                  <span>{item?.title}</span>
+                  <span className="menuItem">{item?.title}</span>
                 </Link>
               );
             })}
