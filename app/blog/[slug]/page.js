@@ -9,7 +9,7 @@ import { marked } from "marked";
 import RelevantArticles from "../../components/RelevantArticles/RelevantArticles";
 import AuthorCard from "../../components/Cards/AuthorCard";
 const page = async ({ params }) => {
-  const articleData = await fetchAPI("articles", {
+  const { data: articleData } = await fetchAPI("articles", {
     filters: {
       slug: { $eq: params?.slug },
     },
@@ -49,7 +49,7 @@ const page = async ({ params }) => {
               return (
                 <Link
                   key={cat?.attributes?.value}
-                  href={"/category" + cat?.attributes?.value}
+                  href={"/category/" + cat?.attributes?.value}
                 >
                   <span className="text-primary hover:border-b-2 font-bold me-3">
                     {cat?.attributes?.label}

@@ -15,7 +15,7 @@ const RelevantArticles = ({ categories }) => {
       setIsLoading(true);
       const categoryArr = categories.map((cat) => cat?.attributes?.value);
       const getData = async () => {
-        const art = await fetchAPI("articles", {
+        const { data: art } = await fetchAPI("articles", {
           pagination: {
             limit: 4,
             start: 0,

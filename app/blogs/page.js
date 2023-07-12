@@ -2,7 +2,7 @@ import { fetchAPI } from "../assets/helpers/fetchAPI";
 import BlogList from "../components/Lists/BlogList";
 import Dropdown from "../components/Dropdown/Dropdown";
 const page = async ({ searchParams }) => {
-  const articles = await fetchAPI("articles", {
+  const { data: articles } = await fetchAPI("articles", {
     populate: "*",
     filters: {
       categories: {
@@ -13,7 +13,7 @@ const page = async ({ searchParams }) => {
     },
   });
 
-  const categories = await fetchAPI("categories", {
+  const { data: categories } = await fetchAPI("categories", {
     populate: "*",
   });
   return (

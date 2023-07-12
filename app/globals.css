@@ -6,6 +6,9 @@
   button {
     @apply bg-black opacity-80 hover:opacity-100 text-white rounded p-2;
   }
+  button:disabled {
+    @apply opacity-30 cursor-not-allowed;
+  }
   h1 {
     @apply xl:text-5xl md:text-4xl text-3xl  font-extrabold dark:text-white mb-14;
   }

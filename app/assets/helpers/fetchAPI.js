@@ -51,5 +51,5 @@ export async function fetchAPI(
 
   const data = await response.json();
 
-  return data?.data;
+  return data;
 }
