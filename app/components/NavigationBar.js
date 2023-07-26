@@ -41,7 +41,11 @@ const NavigationBar = () => {
       {menuOpen && (
         <div className="absolute left-0 top-0 bg-white w-full h-full p-10 z-50">
           <div className="flex flex-row">
-            <Link href={"/"} className="flex-none">
+            <Link
+              href={"/"}
+              className="flex-none"
+              onClick={() => setMenuOpen(false)}
+            >
               <Image
                 src={"https://i.imgur.com/msqTdnJ.png"}
                 width={150}
@@ -60,7 +64,7 @@ const NavigationBar = () => {
           <div className="ml-6 flex flex-col mt-10 gap-6">
             {menuItems.map((item) => {
               return (
-                <Link href={item?.link}>
+                <Link href={item?.link} onClick={() => setMenuOpen(false)}>
                   <span className="menuItem">{item?.title}</span>
                 </Link>
               );

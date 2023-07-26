@@ -5,7 +5,7 @@ import React from "react";
 const FeaturedCard = ({ title, description, imageURL, imageALT, url }) => {
   return (
     <Link href={"/blog/" + url}>
-      <div className="flex flex-col sm:flex-row border rounded-lg hover:bg-slate-100 mt-14 mb-14">
+      <div className="flex flex-col sm:flex-row border rounded-lg hover:bg-slate-100  mb-16">
         <div className="relative sm:w-4/12 h-[15rem] w-full">
           <Image src={imageURL} alt={imageALT} fill className="object-cover" />
         </div>

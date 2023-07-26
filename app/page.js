@@ -14,10 +14,12 @@ export default async function Home() {
 
   return (
     <main>
-      <PageBuilder
-        components={home?.attributes?.pagebuilder}
-        blogs={articles}
-      />
+      <div className="mt-10">
+        <PageBuilder
+          components={home?.attributes?.pagebuilder}
+          blogs={articles}
+        />
+      </div>
     </main>
   );
 }

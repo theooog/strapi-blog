@@ -116,7 +116,7 @@ const page = async ({ params }) => {
         </div>
       </div>
       <div className="mt-20">
-        <RelevantArticles categories={categories} />
+        <RelevantArticles categories={categories} slug={params?.slug} />
       </div>
     </div>
   );

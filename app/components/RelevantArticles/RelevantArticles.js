@@ -5,7 +5,7 @@ import { fetchAPI } from "@/assets/helpers/fetchAPI";
 import BlogList from "../Lists/BlogList";
 import BlogListSkeleton from "./../Skeleton/BlogListSkeleton";
 
-const RelevantArticles = ({ categories }) => {
+const RelevantArticles = ({ categories, slug }) => {
   const ref = useRef();
   const isInViewPort = useOnScreen(ref);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,6 +25,9 @@ const RelevantArticles = ({ categories }) => {
               value: {
                 $in: categoryArr,
               },
+            },
+            slug: {
+              $ne: slug,
             },
           },
           populate: "*",
