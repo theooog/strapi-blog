@@ -7,7 +7,7 @@ const NavigationBar = () => {
   const menuItems = [
     { title: "Home", link: "/" },
     { title: "Blogs", link: "/blogs" },
-    { title: "About us", link: "/about" },
+    { title: "About us", link: "/page/about" },
   ];
   const [menuOpen, setMenuOpen] = useState();
   return (

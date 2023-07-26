@@ -10,20 +10,29 @@
     @apply opacity-30 cursor-not-allowed;
   }
   h1 {
-    @apply xl:text-5xl md:text-4xl text-3xl  font-extrabold dark:text-white mb-14;
+    @apply xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-extrabold dark:text-white mb-14;
   }
+
   h2 {
-    @apply text-4xl font-bold dark:text-white;
+    @apply xl:text-4xl lg:text-3xl md:text-2xl text-lg font-bold dark:text-white mt-10;
   }
+
   h3 {
-    @apply text-3xl font-bold dark:text-white;
+    @apply xl:text-3xl lg:text-2xl md:text-xl text-lg font-bold dark:text-white mt-10;
   }
+
   h4 {
-    @apply text-2xl font-bold dark:text-white;
+    @apply xl:text-2xl lg:text-xl md:text-lg text-lg font-bold dark:text-white mt-10;
   }
+
   h5 {
-    @apply text-xl font-bold dark:text-white;
+    @apply xl:text-xl lg:text-lg md:text-lg text-lg font-bold dark:text-white mt-10;
   }
+
+  h6 {
+    @apply xl:text-lg lg:text-lg md:text-lg text-lg font-bold dark:text-white mt-10;
+  }
+
   p {
     @apply text-ellipsis overflow-hidden mb-3 text-gray-500 dark:text-gray-400 text-lg;
   }

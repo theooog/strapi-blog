@@ -2,6 +2,8 @@ import React from "react";
 import FeaturedCard from "../components/Cards/FeaturedCard";
 import { getMedia } from "../assets/helpers/getMedia";
 import BlogList from "../components/Lists/BlogList";
+import { sanitize } from "isomorphic-dompurify";
+import { marked } from "marked";
 const PageBuilder = ({ components, blogs }) => {
   const page = components.map((component, index) => {
     const name = component?.__component;
@@ -28,6 +30,17 @@ const PageBuilder = ({ components, blogs }) => {
             count={component?.count}
             blogs={blogs}
           />
+        );
+      case "text.text":
+        const getDescription = (text) => {
+          const sanitizedDescription = sanitize(text);
+          const formattedDescription = marked(sanitizedDescription);
+          return { __html: formattedDescription };
+        };
+        return (
+          <div
+            dangerouslySetInnerHTML={getDescription(component?.TextField)}
+          ></div>
         );
     }
   });

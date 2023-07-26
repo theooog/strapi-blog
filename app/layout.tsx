@@ -4,8 +4,6 @@ import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {};
-
 export default function RootLayout({
   children,
 }: {
@@ -21,3 +19,14 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata = {
+  generator: "Next.js",
+  title: { template: "%s | Strapi Blog", default: "Strapi Blog" },
+  applicationName: "Strapi Blog",
+  referrer: "origin-when-cross-origin",
+  keywords: ["Strapi", "Blog", "Technology"],
+  authors: [{ name: "Theo" }],
+  creator: "Theo G.",
+  publisher: "Theo G.",
+};

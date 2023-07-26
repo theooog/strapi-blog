@@ -8,6 +8,41 @@ import { sanitize } from "isomorphic-dompurify";
 import { marked } from "marked";
 import RelevantArticles from "../../components/RelevantArticles/RelevantArticles";
 import AuthorCard from "../../components/Cards/AuthorCard";
+
+export async function generateMetadata({ params }) {
+  const { data: articleData } = await fetchAPI("articles", {
+    filters: {
+      slug: { $eq: params?.slug },
+    },
+    populate: {
+      featured_image: 1,
+      categories: 1,
+      writer: {
+        populate: "*",
+      },
+    },
+  });
+
+  const writer = articleData[0]?.attributes?.writer?.data;
+  if (articleData.length !== 1) {
+    return notFound();
+  }
+  const article = articleData[0];
+  const attr = article?.attributes;
+
+  return {
+    title: attr?.title,
+    description:
+      attr?.description.length > 150
+        ? attr?.description.slice(0, 150) + "..."
+        : attr?.description,
+    openGraph: {
+      images: [getMedia(attr?.featured_image, "medium")?.url],
+    },
+    creator: writer?.attributes?.name,
+  };
+}
+
 const page = async ({ params }) => {
   const { data: articleData } = await fetchAPI("articles", {
     filters: {

@@ -1,6 +1,12 @@
 import { fetchAPI } from "../assets/helpers/fetchAPI";
 import BlogList from "../components/Lists/BlogList";
 import Dropdown from "../components/Dropdown/Dropdown";
+export const metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 const page = async ({ searchParams }) => {
   const { data: articles } = await fetchAPI("articles", {
     populate: "*",
