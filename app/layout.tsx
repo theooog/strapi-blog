@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
+import AuthProvider from "./components/AuthProvider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -11,10 +12,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <NavigationBar />
-        <div className="container">{children}</div>
-        <Footer />
+      <body className={inter.className + " flex flex-col min-h-screen"}>
+        <AuthProvider>
+          <NavigationBar />
+          <div className="flex-grow container">{children}</div>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

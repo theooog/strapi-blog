@@ -3,12 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Hamburger from "../assets/svg/Hamburger";
+import { useAuth } from "@/context/AuthContext";
+import { removeToken } from "@/helpers/helpers";
 const NavigationBar = () => {
   const menuItems = [
     { title: "Home", link: "/" },
     { title: "Blogs", link: "/blogs" },
     { title: "About us", link: "/page/about" },
   ];
+  const { user } = useAuth();
+  const leftMenuItems = [
+    { title: "Login", link: "/login", auth: false },
+    {
+      title: "Logout",
+      link: "#",
+      auth: true,
+      handler: () => {
+        removeToken();
+        window.location.reload();
+      },
+    },
+  ];
+
   const [menuOpen, setMenuOpen] = useState();
   return (
     <div className="py-5 border-b-2 border-grey" id="navbar">
@@ -33,6 +49,21 @@ const NavigationBar = () => {
                 <span className="menuItem">{item?.title}</span>
               </Link>
             );
+          })}
+        </div>
+        <div className="ml-6 hidden md:block ml-auto">
+          {leftMenuItems.map((item) => {
+            if ((item?.auth && user) || (!item?.auth && !user)) {
+              return (
+                <Link
+                  key={item?.link}
+                  href={item?.link}
+                  onClick={item?.handler}
+                >
+                  <span className="menuItem">{item?.title}</span>
+                </Link>
+              );
+            }
           })}
         </div>
       </div>
