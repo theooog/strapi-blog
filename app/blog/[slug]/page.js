@@ -1,9 +1,9 @@
-import { fetchAPI } from "@/assets/helpers/fetchAPI";
+import { fetchAPI } from "../../assets/helpers/fetchAPI";
 import { notFound } from "next/navigation";
 import dayjs from "dayjs";
 import Link from "next/link";
 import Image from "next/image";
-import { getMedia } from "@/assets/helpers/getMedia";
+import { getMedia } from "../../assets/helpers/getMedia";
 import { sanitize } from "isomorphic-dompurify";
 import { marked } from "marked";
 import RelevantArticles from "../../components/RelevantArticles/RelevantArticles";

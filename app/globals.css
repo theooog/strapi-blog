@@ -6,6 +6,9 @@
   button {
     @apply bg-black opacity-80 hover:opacity-100 text-white rounded p-2;
   }
+  button[type="submit"] {
+    @apply bg-black opacity-80 hover:opacity-100 text-white rounded p-2;
+  }
   button:disabled {
     @apply opacity-30 cursor-not-allowed;
   }

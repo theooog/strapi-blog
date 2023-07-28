@@ -1,7 +1,7 @@
-import { fetchAPI } from "@/assets/helpers/fetchAPI";
-import BlogList from "@/components/Lists/BlogList";
+import { fetchAPI } from "../../assets/helpers/fetchAPI";
+import BlogList from "../../components/Lists/BlogList";
 import React from "react";
-import Pagination from "@/components/Pagination/Pagination";
+import Pagination from "../../components/Pagination/Pagination";
 
 const valueToLabel = (text) => {
   text = text.replaceAll("_", " ");

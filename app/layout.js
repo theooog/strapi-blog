@@ -5,11 +5,7 @@ import Footer from "./components/Footer";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className + " flex flex-col min-h-screen"}>

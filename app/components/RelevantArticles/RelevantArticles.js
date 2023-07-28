@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import useOnScreen from "../../assets/hooks/useOnScreen";
-import { fetchAPI } from "@/assets/helpers/fetchAPI";
+import { fetchAPI } from "../../assets/helpers/fetchAPI";
 import BlogList from "../Lists/BlogList";
 import BlogListSkeleton from "./../Skeleton/BlogListSkeleton";
 

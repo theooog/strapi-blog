@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Hamburger from "../assets/svg/Hamburger";
-import { useAuth } from "@/context/AuthContext";
-import { removeToken } from "@/helpers/helpers";
+import { useAuth } from "../context/AuthContext";
+import { removeToken } from "../helpers/helpers";
 const NavigationBar = () => {
   const menuItems = [
     { title: "Home", link: "/" },

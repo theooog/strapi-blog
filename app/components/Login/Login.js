@@ -1,6 +1,6 @@
 "use client";
-import { useAuth } from "@/context/AuthContext";
-import { removeToken, setToken } from "@/helpers/helpers";
+import { useAuth } from "../../context/AuthContext";
+import { removeToken, setToken } from "../../helpers/helpers";
 const Login = () => {
   const { user, isLoading, setUser } = useAuth();
 
@@ -24,6 +24,7 @@ const Login = () => {
     const data = await res.json();
     setUser(data.user);
     setToken(data.jwt);
+    window.location.replace("/youtube");
   };
   const logoutHandler = (e) => {
     e.preventDefault();
